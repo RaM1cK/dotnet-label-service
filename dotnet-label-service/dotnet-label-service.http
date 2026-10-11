@@ -1,6 +1,25 @@
-@dotnet_label_service_HostAddress = http://localhost:5194
+@dotnet_label_service_HostAddress = https://localhost:8081
 
-GET {{dotnet_label_service_HostAddress}}/weatherforecast/
+# Получить все треки
+GET {{dotnet_label_service_HostAddress}}/api/tracks/c904650b-561d-4380-a367-90a6cd4078f0
+Accept: application/json
+
+###
+
+# Создать трек
+POST {{dotnet_label_service_HostAddress}}/api/tracks
+Content-Type: application/json
+
+{
+  "title": "Cadillac",
+  "artist": "MORGENSHTERN",
+  "label": "label1"
+}
+
+###
+
+
+DELETE {{dotnet_label_service_HostAddress}}/api/tracks/c904650b-561d-4380-a367-90a6cd4078f0
 Accept: application/json
 
 ###
